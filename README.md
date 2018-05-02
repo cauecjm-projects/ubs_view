@@ -15,6 +15,14 @@ export DATABASE_URL='mysql2://username:password@host/database'
 export ASSETS_PREFIX='/assets'
 ```
 
+### Iniciar o projeto
+
+```
+rake db:create
+rake db:migrate
+rake db:seed
+```
+
 ### Assets
 
 #### Precompilando
