@@ -1,0 +1,16 @@
+default: &default
+  adapter: mysql2
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: ubs_view_development
+
+test:
+  <<: *default
+  database: ubs_view_test
+
+production:
+  <<: *default
+  database: ubs_view
