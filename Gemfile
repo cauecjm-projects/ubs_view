@@ -14,6 +14,7 @@ gem 'turbolinks',   '~> 5.1'
 gem 'jbuilder',     '~> 2.5'
 gem 'mysql2',       '~> 0.4.4'
 gem 'pry',          '~> 0.10.3'
+gem 'geocoder',     '~> 1.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
