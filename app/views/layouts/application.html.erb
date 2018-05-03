@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>UbsView</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=1000, maximum-scale=1.0"/>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+    <title>UBS-VIEW</title>
+    <meta name="description" content='Aplicativo que irá informar ao visitante as UBSs mais próximas de acordo com sua localidade ou com a localidade informada.'/>
+    <meta name="robots" content="noarchive"/>
+
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- FONTS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <!-- CSS -->
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!-- JS -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
   </head>
 
   <body>
-    <%= yield %>
+    <input type='hidden' id='latitude' name='latitude' value=''>
+    <input type='hidden' id='longitude' name='longitude' value=''>
+
+    <div id="map"></div>
   </body>
 </html>
