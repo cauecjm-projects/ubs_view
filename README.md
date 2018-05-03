@@ -13,6 +13,8 @@ export RAILS_ENV='development'
 export DATABASE_URL='mysql2://username:password@host/database'
 
 export ASSETS_PREFIX='/assets'
+
+export GOOGLE_GEO_KEY=''
 ```
 
 ### Iniciar o projeto
