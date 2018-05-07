@@ -1,0 +1,40 @@
+<div class='row no-gutters'>
+  <div class='col-3 dv-ubs p-3'>
+    <div class='row no-gutters'>
+      <div class='col-12'>
+        <h6 class='text-center mb-3 pb-3 border border-primary border-right-0 border-left-0 border-top-0'><strong>UBS VIEW</strong></h6>
+      </div>
+    </div>
+
+    <div class='row no-gutters'>
+      <div class='col-12 text-center'>
+        <%= form_tag("/", id: 'form_buscar_ubs', authenticity_token: true, remote: true, method: :post) do %>
+          <input type='hidden' id='latitude' name='latitude' value=''>
+          <input type='hidden' id='longitude' name='longitude' value=''>
+
+          <%= button_tag("<h6 class='mb-0'>PROCURAR UBS</h6>".html_safe, class: 'btn btn-primary', id: 'btn_ubs', name: 'btn_ubs', title: 'Procurar UBS') %>
+        <% end %>
+      </div>
+    </div>
+
+    <% if @places %>
+      <div class='row no-gutters mt-3 pt-2 px-2 border border-primary border-right-0 border-left-0 border-bottom-0'>
+        <div class='col-12 text-center'>
+          <h6><strong>Encontrado <%= @places.size %> UBS.</strong></h6>
+        </div>
+      </div>
+
+      <div class='row no-gutters px-2 dv-lista'>
+        <% @places.each do |place| %>
+          <div class='col-12 pt-2 dv-lista-ubs'>
+            <h5><strong><%= place.nom_estab %></strong></h5>
+            <h6 class='pl-2'><%= place.dsc_endereco %></h6>
+            <h6 class='pl-2'><%= "#{place.dsc_bairro} - #{place.dsc_cidade}" %></h6>
+            <h6 class='pl-2'><%= place.dsc_telefone %></h6>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
+//= require bootstrap-united-4.0.0
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+button, .btn{ cursor: pointer !important; }
+
+#map { height: 100%; }
+
+.dv-ubs{
+  position:absolute;
+  background-color:rgba(255,255,255,0.8);
+  border-radius:3px;
+  overflow:hidden;
+  top:50px;
+  left:20px;
+}
+
+.dv-lista{
+  max-height:450px;
+  overflow:scroll;
+  overflow-x: hidden;
+}
+
+.dv-lista-ubs{ border-bottom:solid 1px #e0e0e0; }
+
+.dv-lista-ubs h5{ font-size:12px; }
+
+.dv-lista-ubs h6{ font-size:11px; }

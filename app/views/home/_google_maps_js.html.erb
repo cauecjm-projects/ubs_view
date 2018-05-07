@@ -1,0 +1,27 @@
+<script>
+  var map;
+  function initMap() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      $('#latitude').val(position.coords.latitude);
+      $('#longitude').val(position.coords.longitude);
+
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+          lat: parseFloat(position.coords.latitude),
+          lng: parseFloat(position.coords.longitude)
+        },
+        zoom: 14
+      });
+
+      <% if @places %>
+        <% @places.each do |place| %>
+          var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(<%= place.vlr_latitude.to_f %>, <%= place.vlr_longitude.to_f %>),
+            map: map,
+            title: "<%= place.nom_estab %>"
+          });
+        <% end %>
+      <% end %>
+    });
+  }
+</script>
