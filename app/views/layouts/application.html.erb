@@ -12,9 +12,6 @@
 
     <%= csrf_meta_tags %>
 
-    <!-- FONTS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
     <!-- CSS -->
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -26,10 +23,8 @@
   <body>
     <div id='map'></div>
 
-    <%= render 'google_maps_js' %>
-
     <%= yield %>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_geo_key %>&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets.google_geo_key %>" async defer></script>
   </body>
 </html>

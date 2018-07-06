@@ -8,8 +8,23 @@ class HomeController < ApplicationController
     long = params['longitude']
 
     @places = Ubs.near([lat,long], 3)
+    res     = []
 
-    render '/home/index'
+    if not @places.empty?
+      @places.each do |place|
+        res << {
+          lat:       place.vlr_latitude,
+          lng:       place.vlr_longitude,
+          nom_estab: place.nom_estab,
+          endereco:  place.dsc_endereco,
+          bairro:    place.dsc_bairro,
+          cidade:    place.dsc_cidade,
+          tel:       place.dsc_telefone
+        }
+      end
+    end
+
+    render json: res
   end
 
 end
